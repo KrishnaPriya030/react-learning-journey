@@ -1,0 +1,16 @@
+function App(){
+
+  const name="Krish";
+  const age=22;
+  const brother="akhil";
+
+  return(
+    <div className="data">
+      <h1>Hello Im {name}</h1>
+      <p>Im hardly {age} years old.My brothers name is {brother}</p>
+      <p>Today's date:{new Date().toDateString()}</p>
+    </div>
+  )
+  
+}
+export default App;
