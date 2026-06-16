@@ -1,0 +1,92 @@
+  // ============================================
+// DAY 3: Components & Props
+// React Learning Journey
+// ============================================
+
+
+// ============================================
+// FILE 1: Student.jsx (Child Component)
+// ============================================
+function Student({name,course,marks}){
+
+    return(
+
+    <div className="card">
+        
+        <p>Name:{name}</p>
+        <p>Course:{course}</p>
+        <p>Marks:{marks}</p>
+        <p>{marks>=50 ? "Pass" : "Fail"}</p>
+
+    </div>
+
+    )
+}
+export default Student
+  
+// ============================================
+// FILE 2: App.jsx (Parent Component)
+// ============================================
+
+
+ import Student from './Student'
+import './App.css'
+
+
+function App(){
+
+  return (
+    <div>
+      <h1 >My Students</h1>
+    <div className="card-container">
+      
+     
+         <Student name="Shyam" course="mca" marks={50} />
+           <Student name="Shye" course="mca" marks={90} />
+             <Student name="Shyo" course="mca" marks={30} />
+
+    </div>
+    </div>
+    
+  )
+}
+export default App;
+
+
+// ============================================
+// FILE 3: App.css (All Styles)
+// ============================================
+
+  body{
+  background: cornsilk;
+}
+
+.card{
+  
+  background: linear-gradient(135deg, #803663, #1d0111, #042347);
+  border-radius: 8px;
+  font-style: italic;
+  margin: 10px;
+  padding: 15px 15px;
+  width: 250px;
+  box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
+  color: bisque;
+  border: 1px #ccc;
+}
+.card-container{
+  display: flex;
+  flex-wrap: wrap;
+  margin:16px;
+  padding:20px;
+}
+h1{
+  text-align: center;
+  gap:10px;
+  color:chocolate;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+
+}
+
+.card:hover {
+  transform: translateY(-16px);
+}
