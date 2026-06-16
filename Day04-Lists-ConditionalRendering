@@ -1,0 +1,80 @@
+// ============================================
+// DAY 4: Lists & Conditional Rendering
+// React Learning Journey
+// ============================================
+
+// ============================================
+// FILE 1: App.jsx
+// ============================================
+
+
+import Student from './Student'
+import './App.css'
+
+
+  const students=[
+          {id: 1,name: "Shyam",course:"Mca",marks:50},
+          {id: 2,name: "Shya",course:"bca",marks:90},
+          {id: 3,name: "Shy",course:"Mca",marks:35},
+          {id: 4,name: "Sh",course:"ca",marks:20},
+          {id: 5,name: "S",course:"Mca",marks:50}
+
+         ];
+
+
+
+
+function App(){
+
+  return (
+    <div>
+      <h1 >My Students</h1>
+      
+    <div className="card-container">
+      {students.map((student)=>(
+        <Student
+        key={student.id}
+        name={student.name}
+        course={student.course}
+        marks={student.marks}
+/>
+      )
+      )}
+     
+
+    </div>
+
+      <h1 style={{color:"green"}}>Passed students</h1>
+      <div className='card-container'>
+         {students.filter(s => s.marks>=40)
+         .map(s => (
+          <Student 
+           key={s.id}
+           name={s.name}
+           course={s.course}
+           marks={s.marks}
+           />
+         ))}
+
+      </div>
+
+
+      <h1 style={{color:"red"}}>Failed students</h1>
+      <div className='card-container'>
+        {students.filter(s => s.marks<40)
+        .map(s => (
+          <Student
+          key={s.id}
+           name={s.name}
+           course={s.course}
+           marks={s.marks}
+           />
+
+        ))}
+      </div>
+    </div>
+   
+    
+  )
+}
+export default App;
