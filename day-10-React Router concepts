@@ -1,0 +1,30 @@
+/*
+=========================================
+React Router Concepts Used
+=========================================
+
+1. Dynamic Route Params (:id)
+   - The route contains a variable parameter.
+   - Example: /student/1
+   - Here, 1 is the dynamic id.
+
+2. useParams()
+   - Reads the id value from the URL.
+   - Allows us to identify which student's details to display.
+
+3. Link Component
+   - Creates clickable navigation between pages.
+   - Prevents full page refresh and provides SPA navigation.
+
+4. Lifting State Up
+   - Student data is stored in a common parent component.
+   - Data is passed to different pages through props.
+   - Ensures all pages access the same state.
+
+5. Array.find()
+   - Used to locate a specific student object.
+   - Matches the URL id with the student id.
+   - Returns the selected student's details for display.
+
+=========================================
+*/
